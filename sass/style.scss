@@ -1,0 +1,166 @@
+/*
+- Light Magenta: hsl(293, 100%, 63%)
+- Light Violet: hsl(264, 100%, 61%)
+*/
+$fa-font-path:        "../fontawesome/webfonts";
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/solid.scss";
+* {
+    font-family: 'Rubik', sans-serif;
+}
+body {
+   // background-color: #FAFAFA;
+   font-family: 'Rubik', sans-serif;
+   background-color: #ccc;
+    margin:0px;
+    padding:0px;
+    .container {
+        position: relative;
+        z-index: 1;
+        .background {
+            overflow:hidden;
+            position: absolute;
+            z-index: -1;
+            top:0px;
+            left:0px;
+            width:430px;
+            height:730px;
+            &::before{
+                content: '';
+                width:730px;
+                height:730px;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                background: linear-gradient(0deg, rgb(133, 64, 233)  0%, rgb(198, 64, 255)  100%);
+            }
+        }
+        .phone {
+            margin:auto;
+            width:250px;
+            height:500px;
+            border:10px solid white;
+            box-sizing: border-box;
+            border-radius: 14%/7%;
+            overflow: hidden;
+            background-color: #F5F3F8;
+            color:white;
+            .header {
+                background: linear-gradient(90deg, hsl(264, 100%, 61%)  0%, hsl(293, 100%, 63%)  100%);
+                width:100%;
+                height:65px;
+                border-radius: 0 0 5px 5px;
+                display: flex;
+                position:relative;
+                box-sizing: border-box;
+                padding-top: 16px;
+                align-items: center;
+                padding-left: 10px;
+                padding-right: 10px;
+                .icon-back {
+                    @extend %fa-icon;
+                    @extend .fas;
+                    &:before {
+                        content: fa-content(〈︁);
+                    }
+                    margin-right: 10px;
+                    font-size: 12px;
+                }
+                &::before {
+                    content: '';
+                    width:130px;
+                    height:20px;
+                    background-color: white;
+                    position: absolute;
+                    top:0px;
+                    left:50px;
+                    border-radius: 0 0 15px 15px;
+                }
+                .avatar {
+                    width:22px;
+                    height:22px;
+                    border-radius: 100%;
+                    border:1px solid white;
+                    margin-right: 10px;
+                }
+                .title {
+                    font-size: 14px;
+                    margin-right:auto;
+                    .title-small {
+                        font-size: 8px;
+                        opacity: .5;
+                    }
+                }
+                .menu {
+                    font-size:12px;
+                    @extend %fa-icon;
+                    @extend .fas;
+                    &:before {
+                        content: fa-content($fa-var-ellipsis-v);
+                    }
+                    margin-right: 10px;
+                }
+            }
+            .chat {
+                flex-direction: row;
+                .chat-row {
+                    width:fit-content;
+                    max-width: 120px;
+                    color: #9241c8;
+                    background-color: #eee7f4;
+                    padding: 8px;
+                    font-size: 8px;
+                    display: flex;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    margin-left: 10px;
+                    &.right {
+                        margin-left:auto;
+                        margin-right: 10px;
+                        background: white;
+                    }
+                    &.right-images {
+                        padding:0px;
+                        background: transparent;
+                        margin-left:auto;
+                        margin-right: 10px;
+                        width: 180px;
+                        justify-content: flex-end;
+                        img {
+                            width:45px;
+                            height:45px;
+                            margin-left:10px;
+                            border-radius: 10px;
+                        }
+                    }
+                    &.check-price {
+                        height:15px;
+                        color:white;
+                        background: linear-gradient(-90deg, hsl(264, 100%, 61%)  0%, hsl(293, 100%, 63%)  100%);
+                        align-items: center;
+                        width:150px;
+                        max-width:150px;
+                        .radio {
+                            width:10px;
+                            height:10px;
+                            border-radius: 100%;
+                            border:1px solid rgba(255, 255, 255, .5);
+                            margin-right:10px;
+                        }
+                        .title {
+                            margin-right:auto;
+                            opacity: .5;
+                            font-size:8px;
+                        }
+                        .price {
+                            width:fit-content;
+                            margin-left: auto;
+                            margin-right:10px;
+                            font-size: 12px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
